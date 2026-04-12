@@ -1,18 +1,22 @@
 // Dark Mode Toggle
 function toggleDarkMode() {
     const body = document.body;
-    const toggle = document.querySelector('.toggle-icon');
+    const headerToggle = document.querySelector('.header .toggle-icon');
+    const navbarToggle = document.querySelector('.navbar-toggle-icon');
     
     body.classList.toggle('dark-mode');
     
-    // Update icon - swap between moon and sun
+    // Update icons - swap between moon and sun
+    const sunIcon = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+    const moonIcon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+    
     if (body.classList.contains('dark-mode')) {
-        // Sun icon
-        toggle.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+        if (headerToggle) headerToggle.innerHTML = sunIcon;
+        if (navbarToggle) navbarToggle.innerHTML = sunIcon;
         localStorage.setItem('darkMode', 'enabled');
     } else {
-        // Moon icon
-        toggle.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+        if (headerToggle) headerToggle.innerHTML = moonIcon;
+        if (navbarToggle) navbarToggle.innerHTML = moonIcon;
         localStorage.setItem('darkMode', 'disabled');
     }
 }
@@ -20,10 +24,14 @@ function toggleDarkMode() {
 // Load dark mode preference on page load
 window.addEventListener('DOMContentLoaded', () => {
     const darkModePreference = localStorage.getItem('darkMode');
+    const sunIcon = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+    
     if (darkModePreference === 'enabled') {
         document.body.classList.add('dark-mode');
-        const toggle = document.querySelector('.toggle-icon');
-        toggle.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+        const headerToggle = document.querySelector('.header .toggle-icon');
+        const navbarToggle = document.querySelector('.navbar-toggle-icon');
+        if (headerToggle) headerToggle.innerHTML = sunIcon;
+        if (navbarToggle) navbarToggle.innerHTML = sunIcon;
     }
 });
 
@@ -95,6 +103,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const navbarToggle = document.querySelector('.navbar-dark-mode-toggle');
+    const header = document.querySelector('.header');
+    
+    // Show/hide navbar dark mode toggle based on scroll position
+    if (header && navbarToggle) {
+        const headerBottom = header.offsetTop + header.offsetHeight;
+        if (window.pageYOffset > headerBottom) {
+            navbarToggle.classList.add('visible');
+        } else {
+            navbarToggle.classList.remove('visible');
+        }
+    }
     
     let currentSection = '';
     sections.forEach(section => {
@@ -106,9 +126,9 @@ window.addEventListener('scroll', () => {
     });
     
     navLinks.forEach(link => {
-        link.style.borderBottomColor = 'transparent';
+        link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentSection}`) {
-            link.style.borderBottomColor = 'var(--primary-color)';
+            link.classList.add('active');
         }
     });
 });
