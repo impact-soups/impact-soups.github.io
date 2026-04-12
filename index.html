@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop on Societal Impact for Usable Privacy and Security Research</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">
+            <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+        <div class="container">
+            <div class="header-content">
+                <p class="header-label">Impact@SOUPS</p>
+                <h1>Workshop on Societal Impact for Usable Privacy and Security Research</h1>
+                <div class="header-info">
+                    <span class="info-item"><svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> August 23, 2026</span>
+                    <span class="info-item"><svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Hannover, Germany</span>
+                </div>
+                <div class="header-buttons">
+                    <button class="header-btn primary" onclick="openRegistrationModal()">Register</button>
+                    <button class="header-btn secondary" onclick="document.getElementById('participation').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#participation">Call for Participation</a></li>
+                <li><a href="#committee">Organizing Committee</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <h2>Workshop Overview</h2>
+            <div class="section-content">
+                <p>
+                    This workshop brings together a community of researchers interested in identifying ways to create 
+                    significant, sustained impact that tangibly improves people's security, privacy, and safety. Creating 
+                    societal impact remains a critical challenge for our research community, as we continue to struggle to 
+                    translate research insights into action.
+                </p>
+                <p>
+                    Too often, projects conclude with published papers without follow-through toward real-world change—whether 
+                    through technology design, policy development, sustained community programs, or other efforts that meaningfully 
+                    impact people's lives.
+                </p>
+                <p>
+                    Creating societal impact requires time, labor, and expertise, often demanding new skills that can be difficult 
+                    to develop and sustain within current academic structures. Our community lacks established methods for understanding 
+                    and reporting the downstream effects of research, including the adoption of recommendations and the sustainability 
+                    of proposed interventions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Agenda Section -->
+        <section id="agenda" class="section">
+            <h2>Agenda</h2>
+            <div class="section-content">
+                <div class="agenda-list">
+                    <div class="agenda-item">
+                        <span class="time">9:00 AM - 9:30 AM</span>
+                        <span class="activity">Welcome & Opening Remarks</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="time">9:30 AM - 10:30 AM</span>
+                        <span class="activity">Panel Discussion: Pathways to Impact in Privacy and Security Research</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="time">10:30 AM - 10:45 AM</span>
+                        <span class="activity">Coffee Break</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="time">10:45 AM - 12:15 PM</span>
+                        <span class="activity">Breakout Sessions: Technology Design, Policy, & Community Programs</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="time">12:15 PM - 1:00 PM</span>
+                        <span class="activity">Lunch & Networking</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="time">1:00 PM - 2:00 PM</span>
+                        <span class="activity">Synthesis & Action Planning</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="time">2:00 PM - 2:30 PM</span>
+                        <span class="activity">Closing Remarks & Next Steps</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call for Participation Section -->
+        <section id="participation" class="section">
+            <h2>Call for Participation</h2>
+            <div class="section-content">
+                <p>
+                    We invite participation from researchers of all backgrounds, including faculty, early-stage PhD students, and those working in industry or government. We ask that participants submit a short reflection essay (~500 words) that includes:
+                </p>
+                <ol>
+                    <li>An overview of your past, current, and aspirational work in usable privacy and security;</li>
+                    <li>Any real-world impact of your work, or aspirations for future impact; and</li>
+                    <li>Challenges you have faced or anticipate facing in achieving such impact.</li>
+                </ol>
+                <p>
+                    As part of the workshop, you will engage in discussions of your reflections with other attendees.
+                </p>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section class="registration-section">
+            <div class="container">
+                <h2>Registration</h2>
+                <p class="registration-description">Secure your spot at the workshop</p>
+                <button class="registration-btn" onclick="openRegistrationModal()">Register Now</button>
+            </div>
+        </section>
+
+        <!-- Organizing Committee Section -->
+        <section id="committee" class="section">
+            <h2>Organizing Committee</h2>
+            <div class="section-content">
+                <div class="committee-list">
+                    <div class="committee-member-entry">
+                        <a href="https://rabu-salma.github.io/" class="member-name">Ruba Abu-Salma</a>
+                        <div class="member-affiliation">King's College London</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://www.mpi-sp.org/person/139267" class="member-name">Priyasha Chatterjee</a>
+                        <div class="member-affiliation">Max Planck Institute for Security and Privacy</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://www.bristol.ac.uk/people/person/Habiba-Farzand-d6e520a6-30f5-4680-b9a7-20004bd4c3b5/" class="member-name">Habiba Farzand</a>
+                        <div class="member-affiliation">University of Bristol</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://research-information.bris.ac.uk/en/persons/rui-huan/" class="member-name">Rui Huan</a>
+                        <div class="member-affiliation">University of Bristol</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://research-information.bris.ac.uk/en/persons/marvin-ramokapane/" class="member-name">Marvin Ramokapane</a>
+                        <div class="member-affiliation">University of Bristol</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://www.bristol.ac.uk/people/person/Julia-Slupska-f8af1168-a155-4c86-b112-8e26f68c3554/" class="member-name">Julia Slupska</a>
+                        <div class="member-affiliation">University of Bristol</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://emtseng.me/" class="member-name">Emily Tseng</a>
+                        <div class="member-affiliation">University of Washington</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://warda97.github.io/" class="member-name">Warda Usman</a>
+                        <div class="member-affiliation">Walmart</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://zappala.byu.edu/" class="member-name">Daniel Zappala</a>
+                        <div class="member-affiliation">Brigham Young University</div>
+                    </div>
+                    <div class="committee-member-entry">
+                        <a href="https://yixinzou.github.io/" class="member-name">Yixin Zou</a>
+                        <div class="member-affiliation">Max Planck Institute for Security and Privacy</div>
+                    </div>
+                </div>
+                <p class="committee-contact" style="margin-top: 2rem;">
+                    Questions? Contact Warda Usman at <a href="mailto:warda.usman@walmart.com">warda.usman@walmart.com</a> or Daniel Zappala at <a href="mailto:zappala@cs.byu.edu">zappala@cs.byu.edu</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Workshop on Societal Impact for Usable Privacy and Security Research. </p>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegistrationModal()">&times;</span>
+            <div class="coming-soon-content">
+                <h2>Coming Soon!</h2>
+                <p>Registration for Impact@SOUPS will be opening soon. We're excited to have you join us for this important workshop on August 23, 2026 in Hannover, Germany.</p>
+                <p>Check back soon for registration details and updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
