@@ -530,6 +530,24 @@ body.dark-mode .navbar-toggle-icon {
     background-color: var(--accent-hover);
 }
 
+/* Important Dates */
+.dates-list {
+    list-style: disc;
+    margin-left: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.dates-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.highlight-date {
+    font-weight: 700;
+    color: var(--accent);
+}
+
 /* Agenda Table */
 .agenda-list {
     display: flex;
