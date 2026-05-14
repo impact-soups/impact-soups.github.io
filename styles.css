@@ -300,6 +300,8 @@ body {
     transition: all 0.3s ease;
     letter-spacing: 0.02em;
     font-family: inherit;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .header-btn.primary {
@@ -522,6 +524,8 @@ body.dark-mode .navbar-toggle-icon {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: inherit;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .participation-btn:hover {
